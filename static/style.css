@@ -1,0 +1,89 @@
+<style>
+        @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+
+        .gradient {
+          --size: 750px;
+          --speed: 50s;
+          --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+          position: fixed;
+          top: 10%;
+          left: 30%;
+
+          width: var(--size);
+          height: var(--size);
+          border-radius: 0;
+
+          filter: blur(calc(var(--size) / 5));
+          background-image: linear-gradient(
+            hsl(222, 84%, 60%),
+            hsl(164, 79%, 71%)
+          );
+          animation: rotate var(--speed) var(--easing) alternate infinite;
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+
+          z-index: 0; /* sit behind content */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #071c39;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            overflow: hidden;
+        }
+        .container {
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            container-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+            text-align: center;
+            text-transform: capitalize;
+
+        }
+
+        input[type="text"]:focus {
+            border-color: #74ebd5;
+            box-shadow: 0 0 5px #74ebd5;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #74ebd5;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ACB6E5;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+    </style>
